@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'usuario'], function(){
+Route::get('listar', 'UsuarioController@listar');
+Route::get('criar', 'UsuarioController@criar');
+Route::get('{id}/editar', 'UsuarioController@editar');
+Route::get('{id}/remover', 'UsuarioController@remover');
+Route::get('salvar', 'UsuarioController@salvar');
+});
