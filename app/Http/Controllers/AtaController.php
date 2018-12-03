@@ -10,7 +10,7 @@ class AtaController extends Controller {
         $this->middleware('auth');
     }
     public function listar() {
-        return view('listar,ata', ['atas' => Ata::paginate(10)]);
+        return view('listar.ata', ['atas' => Ata::paginate(10)]);
     }
     public function criar() {
         return view('criar.ata');
